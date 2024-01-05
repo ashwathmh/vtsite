@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #f5f5f5;
+        }
+
+       header {
+    background-color: #333; /* Replace #333 with your desired background color */
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+}
+
+nav {
+    /* Add your styles for the navigation bar here */
+}
+
+
+        #dashboard {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            padding: 20px;
+        }
+
+        .career-tran__card {
+            list-style: none;
+        }
+
+       .career-card__body {
+    background-color: #fff;
+    border: 1px solid #000; /* Add a black border */
+    border-radius: 10px;
+    overflow: hidden;
+    margin: 10px;
+    width: 200px;
+    transition: transform 0.2s ease-in-out;
+    text-align: center;
+
+}
+
+        .career-tran__profile-img {
+            width: 100%;
+            height: 100px; /* Adjusted height */
+            object-fit: cover;
+            border-top-left-radius: 8px;
+            border-top-right-radius: 8px;
+        }
+
+        .career-trans__info {
+            padding: 10px;
+            text-align: center;
+        }
+
+        .empty-circle {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background-color: #ddd;
+            margin: 10px auto;
+        }
+
+        .career-tran__name {
+            margin: 0;
+            font-size: 16px; /* Adjusted font size */
+            font-weight: bold;
+        }
+
+        .career-tran__linkedin-link {
+            display: block;
+            margin-top: 5px; /* Adjusted margin */
+        }
+
+        .career-tran__linkedin {
+            width: 25px; /* Adjusted width */
+            height: 25px; /* Adjusted height */
+            object-fit: cover;
+            border-radius: 50%;
+        }
+
+        .career-tran__prev-decs,
+        .career-tran__prev-role,
+        .career-tran__prev-comp,
+        .career-tran__current-role,
+        .career-tran__current-comp {
+            margin: 5px 0; /* Adjusted margin */
+            font-size: 14px; /* Adjusted font size */
+        }
+
+        .career-tran__arrow {
+            width: 100%;
+            max-height: 20px; /* Adjusted max height */
+            object-fit: contain;
+        }
+
+        .career-tran__card:hover {
+            transform: scale(1.05);
+        }
+
+        .alumni-banner-block {
+            margin-bottom: 20px;
+        }
+
+       .alumni-banner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+     background-color: #5a168f;
+    padding: 20px;
+    border-radius: 30px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border: 2px solid #000; /* Add a black border */
+    
+}
+
+        .alumni-banner-content {
+            flex: 1;
+        }
+
+        .alumni-tags-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .alumni-tag__item {
+    background-color: #fff;
+    color: #000; /* Add your desired text color here */
+    border-radius: 5px;
+    padding: 5px 10px;
+    margin-right: 10px;
+    display: inline-block;
+    font-size: 20px;
+    margin-top: 30px;
+}
+
+        .alumni-banner__title {
+            font-size: 46px;
+            margin: 20px 0;
+             color: #fff;
+             margin-top: 40px;
+        }
+
+        .alumni-banner-block {
+    margin-top: 70px;
+    padding: 16px;
+
+}
+
+        .alumni-banner-btns {
+            display: flex;
+            margin-top: 20px;
+        }
+
+        .alumni-banner__btn {
+            background-color: #3498db;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            margin-right: 10px;
+            cursor: pointer;
+        }
+
+        .btn--ghost {
+            background-color: transparent;
+            border: 1px solid #3498db;
+            color: #3498db;
+        }
+
+        .alumni-banner__supp-text {
+            margin-top: 30px;
+            font-size: 20px;
+            color: #fff;
+        }
+
+        .alumni-banner-image img {
+            width: 75%;
+            border-radius: 3px;
+        }
+
+        .career-tran__card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.career-tran__card {
+    list-style: none;
+    margin-bottom: 20px; /* Add margin between cards */
+}
+
+.career-card__body {
+    background-color: #fff;
+     box-shadow: 0 4px 8px rgba(0, 0, 255, 0.5);
+/*    border: 1px solid #000; /* Add a black border */*/
+/*    border-radius: 40px;*/
+.myBox {
+    overflow: hidden;
+    width: 200px;
+    transition: transform 0.2s ease-in-out;
+    text-align: center;
+}
+
+    margin: 10px; /* Add margin around each card */
+
+
+
+
+
+
+
+
+/* Add any existing styles you have here */
+
+.career-tran__card {
+
+    box-shadow: 0 4px 8px rgba(0, 0, 255, 0.5);
+display: flex;
+margin: 10px; /* Adjust the margin as needed */
+/* border-radius: 10px; Adjust the border-radius as needed */
+
+}
+
+.career-tran__current-role.js-card-role {
+ 
+   font-family: 'Open Sans', sans-serif;
+  
+  font-size: 13px; /* Font size */
+}
+
+}
+
+    </style>
+    <title>Learning Platform Dashboard</title>
+</head>
+<body>
+
+
+<header style="  background-color: white;
+    color: #000;
+    padding: 15px;">
+
+
+        <div style=" display: flex;
+    justify-content: space-between;
+    align-items: center;">
+
+
+            <div style="height: 40px; ">
+                <a href="download (1).html">
+                <img style="height:45px; width:150px" src="http://virajetech.com/assets/uploads/settings/setting_35.png" alt="Logo">
+            </a>
+            </div>
+            
+            <div >
+                <a href="https://virajetech.com/" target="_blank" >
+                <button   style="background-color: #5a168f; border-radius: 3px; padding:6px; cursor: pointer; hover:  background-color #5a168f;color: white;">Login</button>
+                </a>
+            </div>
+        </div>
+     
+    </header>
+
+
+    <div class="alumni-banner-block gl-grid">
+        <div class="alumni-banner">
+            <div class="alumni-banner-content">
+                <ul class="alumni-tags-list">
+                    <li class="alumni-tag__item">
+                        500+ Hiring Companies
+                    </li>
+                    <li class="alumni-tag__item">
+                        60% Avg Salary Hike
+                    </li>
+                </ul>
+                <h1 class="alumni-banner__title">Success is not<br> a destination it's <br>journey</h1>
+                <div class="alumni-banner-btns">
+                    
+                </div>
+                <p class="alumni-banner__supp-text">Trusted by 1 Million+ learners from over 170 countries</p>
+            </div>
+            <div class="alumni-banner-image">
+                <img src="https://d1vwxdpzbgdqj.cloudfront.net/alumni/alumni-banner-new.png" alt="banner image">
+            </div>
+        </div>
+    </div>
+
+
+
+    <div style="
+  font-family: 'Arial', sans-serif;
+  background-color: #f4f4f4;
+  padding: 20px;
+  margin: 20px;
+  border-radius: 10px;
+  text-align: center;
+  color: #333;
+  font-size: 25px;
+  font-weight: bold;
+
+">Inspiring stories of success from our learners </div>
+
+
+    <div id="dashboard">
+        
+
+       <!-- Career Transition Cards -->
+<li class="career-tran__card js-career-trans-card">
+    <div class="career-card__body">
+        <div class="empty-circle">
+            <img class="lazy career-tran__profile-img js-profile-image gl-lazy-loaded fadeIn" 
+                 src="https://img.freepik.com/free-photo/young-beautiful-woman-pink-warm-sweater-natural-look-smiling-portrait-isolated-long-hair_285396-896.jpg?w=826&t=st=1703913266~exp=1703913866~hmac=578d0d74c7a0b8e798e33a2c3f821e103ed62bb2c75434261fa4b38259aba553"
+                 data-src="https://img.freepik.com/free-photo/young-beautiful-woman-pink-warm-sweater-natural-look-smiling-portrait-isolated-long-hair_285396-896.jpg?w=826&t=st=1703913266~exp=1703913866~hmac=578d0d74c7a0b8e798e33a2c3f821e103ed62bb2c75434261fa4b38259aba553">
+
+        </div>
+        <div class="career-trans__info">
+            <p class="career-tran__name js-card-name">SophiaMartin</p>
+            <!-- Add missing anchor tag opening -->
+            <a href="#">
+                <!-- Add any additional content you want here -->
+            </a>
+        </div>
+        <p class="career-tran__prev-decs">JAVA</p>
+        <p class="career-tran__prev-role">Student</p>
+        <p class="career-tran__prev-comp">TEXES</p>
+        <img class="lazy career-tran__arrow gl-lazy-loaded fadeIn"
+             data-src="https://d1vwxdpzbgdqj.cloudfront.net/alumni/triple-arrow.svg"
+             alt="Arrow"
+             title="Arrow"
+             src="https://d1vwxdpzbgdqj.cloudfront.net/alumni/triple-arrow.svg"
+             data-loaded="true">
+         <p class="career-tran__current-role js-card-role"style="padding:6px ;"> 
+            "The instructor's dedication shines through, creating a class that is not only informative but also instills confidence and a true sense of achievement."&nbsp;</p>
+        <p class="career-tran__current-comp"></p>
+    </div>
+</li>
+
+         <!-- Career Transition Cards -->
+<li class="career-tran__card js-career-trans-card">
+    <div class="career-card__body">
+        <div class="empty-circle">
+            <img class="lazy career-tran__profile-img js-profile-image gl-lazy-loaded fadeIn" 
+                 src="https://img.freepik.com/free-photo/waistup-portrait-cute-beautiful-asian-woman-orange-hoodie-introduce-produce-banner-pointing-blank-white-space-holding-product-smiling-recommend-advertisement-white-background_176420-51222.jpg?size=626&ext=jpg&ga=GA1.1.558265016.1703854087&semt=sph"
+                 data-src="https://img.freepik.com/free-photo/waistup-portrait-cute-beautiful-asian-woman-orange-hoodie-introduce-produce-banner-pointing-blank-white-space-holding-product-smiling-recommend-advertisement-white-background_176420-51222.jpg?size=626&ext=jpg&ga=GA1.1.558265016.1703854087&semt=sph">
+
+        </div>
+        <div class="career-trans__info">
+            <p class="career-tran__name js-card-name">PriyaVerma</p>
+            <!-- Add missing anchor tag opening -->
+            <a href="#">
+                <!-- Add any additional content you want here -->
+            </a>
+        </div>
+        <p class="career-tran__prev-decs">SPRINGS</p>
+        <p class="career-tran__prev-role">Student</p>
+        <p class="career-tran__prev-comp">Barclays Capital</p>
+        <img class="lazy career-tran__arrow gl-lazy-loaded fadeIn"
+             data-src="https://d1vwxdpzbgdqj.cloudfront.net/alumni/triple-arrow.svg"
+             alt="Arrow"
+             title="Arrow"
+             src="https://d1vwxdpzbgdqj.cloudfront.net/alumni/triple-arrow.svg"
+             data-loaded="true">
+       <p class="career-tran__current-role js-card-role"style="padding:6px ;"> 
+            "A must-attend class! The instructor's expertise and passion are contagious, turning each session into an enlightening experience that leaves you eager for more."&nbsp;</p>
+        <p class="career-tran__current-comp"></p>
+    </div>
+</li>
+
+        <!-- Career Transition Cards -->
+<li class="career-tran__card js-career-trans-card">
+    <div class="career-card__body">
+        <div class="empty-circle">
+            <img class="lazy career-tran__profile-img js-profile-image gl-lazy-loaded fadeIn" 
+                 src="https://img.freepik.com/free-photo/portrait-young-indian-top-manager-t-shirt-tie-crossed-arms-smiling-white-isolated-wall_496169-1513.jpg?w=826&t=st=1703912898~exp=1703913498~hmac=05690f1d44cdb3ff13af50c517534f24e1993fdf362fc9618109b3c2e6b7c2dd"
+                 data-src="https://img.freepik.com/free-photo/portrait-young-indian-top-manager-t-shirt-tie-crossed-arms-smiling-white-isolated-wall_496169-1513.jpg?w=826&t=st=1703912898~exp=1703913498~hmac=05690f1d44cdb3ff13af50c517534f24e1993fdf362fc9618109b3c2e6b7c2dd">
+
+        </div>
+        <div class="career-trans__info">
+            <p class="career-tran__name js-card-name">MichaelDavis</p>
+            <!-- Add missing anchor tag opening -->
+            <a href="#">
+                <!-- Add any additional content you want here -->
+            </a>
+        </div>
+        <p class="career-tran__prev-decs">JAVA script</p>
+        <p class="career-tran__prev-role">Student</p>
+        <p class="career-tran__prev-comp">Australia</p>
+        <img class="lazy career-tran__arrow gl-lazy-loaded fadeIn"
+             data-src="https://d1vwxdpzbgdqj.cloudfront.net/alumni/triple-arrow.svg"
+             alt="Arrow"
+             title="Arrow"
+             src="https://d1vwxdpzbgdqj.cloudfront.net/alumni/triple-arrow.svg"
+             data-loaded="true">
+        <p class="career-tran__current-role js-card-role">
+             <p class="career-tran__current-role js-card-role"style="padding:6px ;"> 
+            "An excellent class – impeccably structured, engaging, and led by an instructor whose expertise elevates the learning experience to unparalleled heights."&nbsp;</
+        </p>
+        <p class="career-tran__current-comp"></p>
+    </div>
+</li>
+
+        <!-- Career Transition Cards -->
+<li class="career-tran__card js-career-trans-card">
+    <div class="career-card__body">
+        <div class="empty-circle">
+            <img class="lazy career-tran__profile-img js-profile-image gl-lazy-loaded fadeIn" 
+                 src="https://img.freepik.com/free-photo/waist-up-portrait-handsome-serious-unshaven-male-keeps-hands-together-dressed-dark-blue-shirt-has-talk-with-interlocutor-stands-against-white-wall-self-confident-man-freelancer_273609-16320.jpg?w=826&t=st=1703912565~exp=1703913165~hmac=d72578f116c499e861d3f601e8897f3f744d02f875194bcfc9e50d39e1e2ad60"
+                 data-src="https://img.freepik.com/free-photo/waist-up-portrait-handsome-serious-unshaven-male-keeps-hands-together-dressed-dark-blue-shirt-has-talk-with-interlocutor-stands-against-white-wall-self-confident-man-freelancer_273609-16320.jpg?w=826&t=st=1703912565~exp=1703913165~hmac=d72578f116c499e861d3f601e8897f3f744d02f875194bcfc9e50d39e1e2ad60">
+
+        </div>
+        <div class="career-trans__info">
+            <p class="career-tran__name js-card-name">JasonMiller</p>
+            <!-- Add missing anchor tag opening -->
+            <a href="#">
+                <!-- Add any additional content you want here -->
+            </a>
+        </div>
+        <p class="career-tran__prev-decs">PYTHON</p>
+        <p class="career-tran__prev-role">Student</p>
+        <p class="career-tran__prev-comp">Sydney</p>
+        <img class="lazy career-tran__arrow gl-lazy-loaded fadeIn"
+             data-src="https://d1vwxdpzbgdqj.cloudfront.net/alumni/triple-arrow.svg"
+             alt="Arrow"
+             title="Arrow"
+             src="https://d1vwxdpzbgdqj.cloudfront.net/alumni/triple-arrow.svg"
+             data-loaded="true">
+        <p class="career-tran__current-role js-card-role"style="padding:6px  ;"> 
+           "Excellence personified! This class stands out with its exceptional content delivery, interactive engagement, and a commitment to nurturing the intellectual and practical skills of its participants."&nbsp;</p>
+        <p class="career-tran__current-comp"></p>
+    </div>
+</li>
+
+        <!-- Career Transition Cards -->
+<li class="career-tran__card js-career-trans-card">
+    <div class="career-card__body">
+        <div class="empty-circle">
+            <img class="lazy career-tran__profile-img js-profile-image gl-lazy-loaded fadeIn" 
+                 src="https://img.freepik.com/free-photo/young-bearded-man-with-striped-shirt_273609-5677.jpg?w=826&t=st=1703912356~exp=1703912956~hmac=babede8bcc124ee37ee73af211fc772a7ef68cde4c06b0a8ca304e705a2ece39"
+                 data-src="https://img.freepik.com/free-photo/young-bearded-man-with-striped-shirt_273609-5677.jpg?w=826&t=st=1703912356~exp=1703912956~hmac=babede8bcc124ee37ee73af211fc772a7ef68cde4c06b0a8ca304e705a2ece39">
+
+        </div>
+        <div class="career-trans__info">
+            <p class="career-tran__name js-card-name">ArjunGupta</p>
+            <!-- Add missing anchor tag opening -->
+            <a href="#">
+                <!-- Add any additional content you want here -->
+            </a>
+        </div>
+        <p class="career-tran__prev-decs">Cloud computing</p>
+        <p class="career-tran__prev-role">Student</p>
+        <p class="career-tran__prev-comp">USA</p>
+        <img class="lazy career-tran__arrow gl-lazy-loaded fadeIn"
+             data-src="https://d1vwxdpzbgdqj.cloudfront.net/alumni/triple-arrow.svg"
+             alt="Arrow"
+             title="Arrow"
+             src="https://d1vwxdpzbgdqj.cloudfront.net/alumni/triple-arrow.svg"
+             data-loaded="true">
+       <p class="career-tran__current-role js-card-role"style="padding:6px ;"> 
+           "Outstanding in every respect, this class is a testament to educational excellence – a perfect blend of insightful content, dynamic teaching methods, and a passion for fostering brilliance.&nbsp;</p>
+        <p class="career-tran__current-comp"></p>
+    </div>
+</li>
+        
+  <!-- Career Transition Cards -->
+  <li class="career-tran__card js-career-trans-card">
+    <div class="career-card__body">
+        <div class="empty-circle">
+            <img class="lazy career-tran__profile-img js-profile-image gl-lazy-loaded fadeIn" 
+                 src="https://img.freepik.com/premium-photo/young-student-man-checkered-shirt-jeans-with-backpack-posed-evening-city-against-lake-shows-two-fingers_151355-5272.jpg?w=826"
+                 data-src="https://img.freepik.com/premium-photo/young-student-man-checkered-shirt-jeans-with-backpack-posed-evening-city-against-lake-shows-two-fingers_151355-5272.jpg?w=826">
+
+        </div>
+        <div class="career-trans__info">
+            <p class="career-tran__name js-card-name">OliviaFisher</p>
+            <!-- Add missing anchor tag opening -->
+            <a href="#">
+                <!-- Add any additional content you want here -->
+            </a>
+        </div>
+        <p class="career-tran__prev-decs">HTML/CSS</p>
+        <p class="career-tran__prev-role">Student</p>
+        <p class="career-tran__prev-comp">USA</p>
+        <img class="lazy career-tran__arrow gl-lazy-loaded fadeIn"
+             data-src="https://d1vwxdpzbgdqj.cloudfront.net/alumni/triple-arrow.svg"
+             alt="Arrow"
+             title="Arrow"
+             src="https://d1vwxdpzbgdqj.cloudfront.net/alumni/triple-arrow.svg"
+             data-loaded="true">
+       <p class="career-tran__current-role js-card-role"style="padding:6px ;"> 
+            This was great! I highly recommend her to anybody! Very nice and patient and straight to&nbsp;</p>
+        <p class="career-tran__current-comp"></p>
+    </div>
+</li>
+        <!-- Add more Career Transition Cards -->
+        <li class="career-tran__card js-career-trans-card">
+    <div class="career-card__body">
+        <div class="empty-circle">
+            <img class="lazy career-tran__profile-img js-profile-image gl-lazy-loaded fadeIn" 
+                 src="https://img.freepik.com/free-photo/close-up-young-successful-man-smiling-camera-standing-casual-outfit-against-blue-background_1258-66609.jpg?w=826&t=st=1703913741~exp=1703914341~hmac=8bf31de3394a7a2277d4a4c6b8d706515219049346cb25219118cc2f262f2c71"
+                 data-src="https://img.freepik.com/free-photo/close-up-young-successful-man-smiling-camera-standing-casual-outfit-against-blue-background_1258-66609.jpg?w=826&t=st=1703913741~exp=1703914341~hmac=8bf31de3394a7a2277d4a4c6b8d706515219049346cb25219118cc2f262f2c71">
+
+        </div>
+        <div class="career-trans__info">
+            <p class="career-tran__name js-card-name">BRAIN</p>
+            <!-- Add missing anchor tag opening -->
+            <a href="#">
+                <!-- Add any additional content you want here -->
+            </a>
+        </div>
+        <p class="career-tran__prev-decs">REACTJS</p>
+        <p class="career-tran__prev-role">Student</p>
+        <p class="career-tran__prev-comp">NEW YORK</p>
+        <img class="lazy career-tran__arrow gl-lazy-loaded fadeIn"
+             data-src="https://d1vwxdpzbgdqj.cloudfront.net/alumni/triple-arrow.svg"
+             alt="Arrow"
+             title="Arrow"
+             src="https://d1vwxdpzbgdqj.cloudfront.net/alumni/triple-arrow.svg"
+             data-loaded="true">
+       <p class="career-tran__current-role js-card-role"style="padding:6px ;"> 
+            "Exceptional class! The instructor's passion and clarity transform complex topics into an accessible and rewarding learning journey&nbsp;</p>
+        <p class="career-tran__current-comp"></p>
+    </div>
+</li>
+
+  <!-- Add more Career Transition Cards -->
+        <li class="career-tran__card js-career-trans-card">
+    <div class="career-card__body">
+        <div class="empty-circle">
+            <img class="lazy career-tran__profile-img js-profile-image gl-lazy-loaded fadeIn" 
+                 src="https://img.freepik.com/premium-photo/smiling-asian-student-holding-laptop-looking-camera-university-campus-education-concept_219285-840.jpg?w=360"
+                 data-src="https://img.freepik.com/premium-photo/smiling-asian-student-holding-laptop-looking-camera-university-campus-education-concept_219285-840.jpg?w=360">
+
+        </div>
+        <div class="career-trans__info">
+            <p class="career-tran__name js-card-name">VikramMalhotra</p>
+            <!-- Add missing anchor tag opening -->
+            <a href="#">
+                <!-- Add any additional content you want here -->
+            </a>
+        </div>
+        <p class="career-tran__prev-decs">OOPS</p>
+        <p class="career-tran__prev-role">Student</p>
+        <p class="career-tran__prev-comp">USA</p>
+        <img class="lazy career-tran__arrow gl-lazy-loaded fadeIn"
+             data-src="https://d1vwxdpzbgdqj.cloudfront.net/alumni/triple-arrow.svg"
+             alt="Arrow"
+             title="Arrow"
+             src="https://d1vwxdpzbgdqj.cloudfront.net/alumni/triple-arrow.svg"
+             data-loaded="true">
+       <p class="career-tran__current-role js-card-role"style="padding:6px ;"> 
+            "An enriching experience – the class seamlessly blends expertise with engaging teaching methods, making learning both enjoyable and insightful."&nbsp;</p>
+        <p class="career-tran__current-comp"></p>
+    </div>
+</li>
+
+  <!-- Add more Career Transition Cards -->
+        <li class="career-tran__card js-career-trans-card">
+    <div class="career-card__body">
+        <div class="empty-circle">
+             <img class="lazy career-tran__profile-img js-profile-image gl-lazy-loaded fadeIn" 
+                 src="https://img.freepik.com/free-photo/man-wearing-t-shirt-gesturing_23-2149393647.jpg?w=826&t=st=1703914202~exp=1703914802~hmac=395da65ae75736f430a60c33f8a94beaf60039a3da925fffa3eb6d8ce09a3d82"
+                 data-src="https://img.freepik.com/free-photo/man-wearing-t-shirt-gesturing_23-2149393647.jpg?w=826&t=st=1703914202~exp=1703914802~hmac=395da65ae75736f430a60c33f8a94beaf60039a3da925fffa3eb6d8ce09a3d82">
+       </div>
+        <div class="career-trans__info">
+            <p class="career-tran__name js-card-name">SANJU</p>
+            <!-- Add missing anchor tag opening -->
+            <a href="#">
+                <!-- Add any additional content you want here -->
+            </a>
+        </div>
+        <p class="career-tran__prev-decs">HIBERNET</p>
+        <p class="career-tran__prev-role">Student</p>
+        <p class="career-tran__prev-comp">INDIA</p>
+        <img class="lazy career-tran__arrow gl-lazy-loaded fadeIn"
+             data-src="https://d1vwxdpzbgdqj.cloudfront.net/alumni/triple-arrow.svg"
+             alt="Arrow"
+             title="Arrow"
+             src="https://d1vwxdpzbgdqj.cloudfront.net/alumni/triple-arrow.svg"
+             data-loaded="true">
+       <p class="career-tran__current-role js-card-role"style="padding:6px ;"> 
+            "A standout class that fosters a supportive learning environment, where each session unfolds as an inspiring exploration of knowledge and skill."&nbsp;</p>
+        <p class="career-tran__current-comp"></p>
+    </div>
+</li>
+
+
+
+  <!-- Add more Career Transition Cards -->
+        <li class="career-tran__card js-career-trans-card">
+    <div class="career-card__body">
+        <div class="empty-circle">
+             <img class="lazy career-tran__profile-img js-profile-image gl-lazy-loaded fadeIn" 
+                 src="https://img.freepik.com/free-photo/indian-business-man-with-crossed-hands-posing-isolated-white-wall_231208-2626.jpg?w=826&t=st=1703914955~exp=1703915555~hmac=cb3cedeb36f81ba2ff538432f0e48755411c7ef94c7aa681c5513b13b94e2035"
+                 data-src="https://img.freepik.com/free-photo/indian-business-man-with-crossed-hands-posing-isolated-white-wall_231208-2626.jpg?w=826&t=st=1703914955~exp=1703915555~hmac=cb3cedeb36f81ba2ff538432f0e48755411c7ef94c7aa681c5513b13b94e2035">
+
+        </div>
+        <div class="career-trans__info">
+            <p class="career-tran__name js-card-name">EthanBarnes</p>
+            <!-- Add missing anchor tag opening -->
+            <a href="#">
+                <!-- Add any additional content you want here -->
+            </a>
+        </div>
+        <p class="career-tran__prev-decs">AJEX</p>
+        <p class="career-tran__prev-role">Student</p>
+        <p class="career-tran__prev-comp">TOKYO</p>
+        <img class="lazy career-tran__arrow gl-lazy-loaded fadeIn"
+             data-src="https://d1vwxdpzbgdqj.cloudfront.net/alumni/triple-arrow.svg"
+             alt="Arrow"
+             title="Arrow"
+             src="https://d1vwxdpzbgdqj.cloudfront.net/alumni/triple-arrow.svg"
+             data-loaded="true">
+       <p class="career-tran__current-role js-card-role"style="padding:6px ;"> 
+           "This class exceeded my expectations with its dynamic approach, leaving me not just well-informed but genuinely excited about the subject matter."&nbsp;</p>
+        <p class="career-tran__current-comp"></p>
+    </div>
+</li>
+
+    </div>
+
+</body>
+</html>
